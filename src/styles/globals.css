@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1628;
+  --navy-deep: #060e1a;
+  --navy-mid: #0d1f3c;
+  --brand-red: #cc1f1f;
+  --brand-blue: #1a3a8f;
+  --brand-cyan: #0ea5e9;
+  --glass: rgba(255,255,255,0.06);
+  --glass2: rgba(255,255,255,0.10);
+  --glass3: rgba(255,255,255,0.16);
+  --border: rgba(255,255,255,0.12);
+  --border-hover: rgba(14,165,233,0.4);
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-outfit: 'Outfit', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-outfit);
+  background: var(--navy);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--navy-deep); }
+::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-cyan); }
+
+/* GLASS UTILITIES */
+@layer components {
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+  }
+  .glass-hover {
+    transition: all 0.35s ease;
+  }
+  .glass-hover:hover {
+    background: var(--glass2);
+    border-color: var(--border-hover);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-red {
+    background: linear-gradient(135deg, var(--brand-red), #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan));
+    box-shadow: 0 4px 20px rgba(26,58,143,0.4);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(14,165,233,0.5);
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white transition-all duration-300;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover {
+    background: var(--glass2);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-3;
+    color: var(--brand-cyan);
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--brand-cyan);
+    border-radius: 1px;
+  }
+  .section-title {
+    font-family: var(--font-playfair);
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4;
+  }
+  .card-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(transparent 0deg, rgba(14,165,233,0.08) 60deg, transparent 120deg);
+    animation: spin 8s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .card-glow:hover::before { opacity: 1; }
+}
+
+/* NOISE OVERLAY */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.5;
+}
+
+/* CAROUSEL FADE */
+.carousel-slide { transition: opacity 1.4s ease-in-out; }
+
+/* MARQUEE */
+.marquee-track { display: flex; gap: 1.5rem; animation: scrollClients 25s linear infinite; width: max-content; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* MAP */
+.map-container iframe {
+  filter: brightness(0.75) saturate(0.8) hue-rotate(180deg);
+}
