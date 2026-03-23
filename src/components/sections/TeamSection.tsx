@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import { Linkedin, X, Award } from 'lucide-react'
+import { X, Award } from 'lucide-react'
 import { TEAM, DEPT_COLORS, type TeamMember } from '@/lib/team'
 
 const DEPTS = ['All', ...Array.from(new Set(TEAM.map(m=>m.dept)))]

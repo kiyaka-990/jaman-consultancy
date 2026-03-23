@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Sun, Moon, ChevronDown, Type, Contrast, Volume2 } from 'lucide-react'
+import { Menu, X, Sun, Moon, ChevronDown, Type, Contrast } from 'lucide-react'
 import { useTheme } from '@/components/ui/ThemeProvider'
 import { SERVICES } from '@/lib/data'
 
@@ -27,7 +27,7 @@ export function Navbar() {
   const [highContrast, setHighContrast] = useState(false)
   const [dyslexicFont, setDyslexicFont] = useState(false)
   const [accOpen, setAccOpen] = useState(false)
-  const megaRef = useRef<HTMLDivElement>(null)
+  const megaRef = useRef<HTMLLIElement>(null)
   const accRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
