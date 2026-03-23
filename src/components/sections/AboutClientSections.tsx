@@ -9,7 +9,7 @@ export function StatsStrip() {
         {STATS.map(({ value, label }, i) => (
           <div key={label}
             className="rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group"
-            style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)' }}
+            style={{ background:'var(--card-bg)', border:'1px solid rgba(255,255,255,0.08)' }}
             onMouseEnter={e => {
               const el = e.currentTarget as HTMLElement
               el.style.borderColor = i%2===0 ? 'rgba(220,26,26,0.5)' : 'rgba(37,99,235,0.5)'
@@ -17,7 +17,7 @@ export function StatsStrip() {
             }}
             onMouseLeave={e => {
               const el = e.currentTarget as HTMLElement
-              el.style.borderColor='rgba(255,255,255,0.08)'
+              el.style.borderColor=var(--border)
               el.style.boxShadow='none'
             }}>
             <div className="font-black text-3xl gradient-text mb-1">{value}</div>
@@ -53,7 +53,7 @@ export function VisionMissionSection() {
                 text:'To provide high-quality consultancy services through applied research, participatory approaches, and results-oriented strategies that promote safety, equity, sustainability, and measurable impact.' },
             ].map(({ emoji, label, text, color }) => (
               <div key={label} className="rounded-2xl p-6 relative overflow-hidden"
-                style={{ background:'rgba(255,255,255,0.04)', border:`1px solid ${color}30` }}>
+                style={{ background:'var(--card-bg)', border:`1px solid ${color}30` }}>
                 <div className="absolute top-0 left-0 bottom-0 w-1 rounded-l-2xl" style={{background:`linear-gradient(180deg,${color},transparent)`}}/>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center text-lg"
@@ -106,9 +106,9 @@ export function ValuesSection() {
           {VALUES.map((v) => (
             <div key={v.title}
               className="group relative rounded-2xl p-5 text-center flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-2 overflow-hidden cursor-default"
-              style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)' }}
+              style={{ background:'var(--card-bg)', border:'1px solid rgba(255,255,255,0.08)' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor='rgba(220,26,26,0.45)'; (e.currentTarget as HTMLElement).style.boxShadow='0 10px 30px rgba(220,26,26,0.12)' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor='rgba(255,255,255,0.08)'; (e.currentTarget as HTMLElement).style.boxShadow='none' }}>
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor=var(--border); (e.currentTarget as HTMLElement).style.boxShadow='none' }}>
               <span className="text-3xl">{v.icon}</span>
               <h3 className="text-white font-bold text-sm">{v.title}</h3>
               <p className="text-slate-400 text-xs leading-relaxed">{v.desc}</p>
@@ -140,7 +140,7 @@ export function TeamSection() {
           {TEAM_ROLES.map((member, i) => (
             <div key={member.title}
               className="group rounded-2xl p-6 text-center flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden"
-              style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)' }}
+              style={{ background:'var(--card-bg)', border:'1px solid rgba(255,255,255,0.08)' }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement
                 el.style.borderColor = i%2===0 ? 'rgba(220,26,26,0.45)' : 'rgba(37,99,235,0.45)'
@@ -148,7 +148,7 @@ export function TeamSection() {
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement
-                el.style.borderColor='rgba(255,255,255,0.08)'
+                el.style.borderColor=var(--border)
                 el.style.boxShadow='none'
               }}>
               <div className="w-16 h-16 rounded-full flex items-center justify-center font-black text-sm text-white"
@@ -179,7 +179,7 @@ export function StandardsSection() {
           {STANDARDS.map((s, i) => (
             <div key={s.title}
               className="card-glow rounded-2xl p-5 text-center flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden"
-              style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)' }}
+              style={{ background:'var(--card-bg)', border:'1px solid rgba(255,255,255,0.08)' }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement
                 el.style.borderColor = i%2===0 ? 'rgba(220,26,26,0.5)' : 'rgba(37,99,235,0.5)'
@@ -187,7 +187,7 @@ export function StandardsSection() {
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement
-                el.style.borderColor='rgba(255,255,255,0.08)'
+                el.style.borderColor=var(--border)
                 el.style.boxShadow='none'
               }}>
               <span className="text-3xl">{s.icon}</span>

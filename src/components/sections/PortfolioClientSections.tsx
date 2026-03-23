@@ -9,7 +9,7 @@ export function EngagementCards() {
         <div
           key={eng.num}
           className="group rounded-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 hover:-translate-y-1"
-          style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.09)' }}
+          style={{ background: 'var(--card-bg)', border: '1px solid rgba(255,255,255,0.09)' }}
           onMouseEnter={e => {
             const el = e.currentTarget as HTMLElement
             el.style.borderColor = 'rgba(14,165,233,0.35)'
@@ -17,7 +17,7 @@ export function EngagementCards() {
           }}
           onMouseLeave={e => {
             const el = e.currentTarget as HTMLElement
-            el.style.borderColor = 'rgba(255,255,255,0.09)'
+            el.style.borderColor = 'var(--border)'
             el.style.boxShadow = 'none'
           }}
         >
@@ -78,9 +78,9 @@ export function ClientCards() {
         <div
           key={name}
           className="rounded-2xl p-6 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1"
-          style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.09)' }}
+          style={{ background: 'var(--card-bg)', border: '1px solid rgba(255,255,255,0.09)' }}
           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(14,165,233,0.35)' }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.09)' }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)' }}
         >
           <span className="text-3xl">{icon}</span>
           <span className="text-white font-semibold text-sm leading-tight">{name}</span>

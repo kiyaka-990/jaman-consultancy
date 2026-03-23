@@ -107,7 +107,7 @@ export function Footer() {
             © {new Date().getFullYear()} <span style={{color:'var(--red)'}}>Jaman Consultancy Limited</span>. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <p className="text-slate-500 text-sm">Designed with <span className="text-red-500">♥</span> in Nairobi, Kenya</p>
+            <p className="text-slate-500 text-sm">Designed with <span className="text-red-500">♥</span> by Asterleigh Systems</p>
             <button onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}
               className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:-translate-y-1"
               style={{background:'linear-gradient(135deg,var(--red-dark),var(--red))'}}

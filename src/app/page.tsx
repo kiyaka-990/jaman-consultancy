@@ -3,6 +3,7 @@ import { AboutStrip } from '@/components/sections/AboutStrip'
 import { ServicesGrid } from '@/components/sections/ServicesGrid'
 import { ValuesGrid } from '@/components/sections/ValuesGrid'
 import { TeamSection } from '@/components/sections/TeamSection'
+import { Testimonials } from '@/components/sections/Testimonials'
 import { ClientsMarquee } from '@/components/sections/ClientsMarquee'
 import { StandardsBadges } from '@/components/sections/StandardsBadges'
 import { CtaBanner } from '@/components/sections/CtaBanner'
@@ -16,6 +17,7 @@ export default function HomePage() {
       <ServicesGrid />
       <ValuesGrid />
       <TeamSection />
+      <Testimonials />
       <ClientsMarquee />
       <StandardsBadges />
       <CtaBanner />

@@ -12,7 +12,7 @@ export function ServiceCards() {
           key={svc.id}
           className="group rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2"
           style={{
-            background: 'rgba(255,255,255,0.05)',
+            background: 'var(--card-bg)',
             border: '1px solid rgba(255,255,255,0.10)',
           }}
           onMouseEnter={e => {
@@ -22,7 +22,7 @@ export function ServiceCards() {
           }}
           onMouseLeave={e => {
             const el = e.currentTarget as HTMLElement
-            el.style.borderColor = 'rgba(255,255,255,0.10)'
+            el.style.borderColor = 'var(--border)'
             el.style.boxShadow = 'none'
           }}
         >
